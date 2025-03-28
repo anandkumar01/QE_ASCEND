@@ -9,20 +9,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Task06 {
 
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver;
 
 	@BeforeClass
 	void launchBrowser() {
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-	}
-
-	@BeforeMethod
-	void launchUrl() {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
 

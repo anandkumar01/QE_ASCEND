@@ -17,7 +17,6 @@ public class Task12 {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.calculator.net/bmi-calculator.html");
-
 	}
 
 	@Test(priority = 1)

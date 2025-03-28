@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,7 @@ public class Task08 {
 
 	WebDriver driver;
 
-	@BeforeMethod
+	@BeforeClass
 	void launchBrowser() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -35,7 +35,7 @@ public class Task08 {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterMethod
+	@AfterClass
 	void closeBrowser() {
 		driver.quit();
 	}

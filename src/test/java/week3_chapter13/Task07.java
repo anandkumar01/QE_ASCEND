@@ -27,6 +27,7 @@ public class Task07 {
 
 	@Test(priority = 1)
 	void testLogin() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//button[normalize-space()='Customer Login']")).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.id("userSelect")).click();
@@ -39,7 +40,6 @@ public class Task07 {
 
 	@Test(priority = 2, dependsOnMethods = "testLogin")
 	void testDeposit() {
-
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		driver.findElement(By.xpath("//button[normalize-space()='Deposit']")).click();

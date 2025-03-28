@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,7 +13,7 @@ public class Task09 {
 
 	WebDriver driver;
 
-	@BeforeMethod
+	@BeforeClass
 	void launchBrowser() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -38,7 +38,7 @@ public class Task09 {
 		Assert.assertNotEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/v1/");
 	}
 
-	@AfterMethod
+	@AfterClass
 	void closeBrowser() {
 		if (driver != null) {
             driver.quit();
